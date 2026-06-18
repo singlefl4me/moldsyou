@@ -1,4 +1,4 @@
-﻿(Content warning: illness, text descriptions of health issues)
+﻿Content warning: illness, text descriptions of health issues
 
 A sickly tenant finds themselves in their run-down apartment after an exceptionally taxing day. Something starts to emerge from the depths of the apartment; perhaps to offer companionship, or to hasten their decline. Perhaps both.
 
