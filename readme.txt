@@ -1,4 +1,6 @@
-﻿A sickly tenant finds themselves in their run-down apartment after an exceptionally taxing day. Something starts to emerge from the depths of the apartment; perhaps to offer companionship, or to hasten their decline. Perhaps both.
+﻿(Content warning: illness, text descriptions of health issues)
+
+A sickly tenant finds themselves in their run-down apartment after an exceptionally taxing day. Something starts to emerge from the depths of the apartment; perhaps to offer companionship, or to hasten their decline. Perhaps both.
 
 (This ghost utilizes text that appears upside down, it may be difficult for certain people to read or to parse properly using a machine translator. This behavior can be changed on first boot.)
 ----
