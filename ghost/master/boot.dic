@@ -6,6 +6,7 @@ OnFirstBoot : all
     dayend_time = 0
     daystart_time = 0
     dialoguecount = 0
+    aitalkinterval_old = aitalkinterval
     
     OnDialogueCountSet
 
