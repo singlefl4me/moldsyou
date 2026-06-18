@@ -1,0 +1,22 @@
+charset,UTF-8
+type,shell
+
+name,default
+craftman,idk
+craftmanw,idkimtired
+craftmanurl,https://github.com/singlefl4me
+
+seriko.use_self_alpha,1
+sakura.balloon.offsetxr,480
+sakura.balloon.offsety,250
+sakura.seriko.alignmenttodesktop,left
+kero.defaultleft,860
+kero.seriko.alignmenttodesktop,top
+
+//sakura.bindgroup*.name,(category name),(part name),(thumbnail name)
+sakura.bindgroup100.name,effect,effect1
+sakura.bindgroup101.name,effect,effect2
+sakura.bindgroup102.name,effect,effect3
+sakura.bindgroup103.name,effect,effect4
+
+sakura.menu,hidden

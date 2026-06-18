@@ -1,0 +1,243 @@
+OnAiTalk
+{
+	if CHAIN.IDName != ""   {
+		LastTalk = ChainTalk
+	}
+    elseif dialoguecount >= dialoguecount_max   {
+        OnTalkStop
+        LastTalk = DayEndTalk
+    }
+	else    {
+        if fliptext_var == "true"; LastTalk = RandomTalk
+        else; LastTalk = RandomTalk_unflip
+        dialoguecount++
+	}
+	LastTalk
+}
+
+RandomTalk : nonoverlap_pool
+{
+    //base pool
+    "\0\s[0]%(normtext)My head is pounding...\_w[2400] Everything feels so hazy..."
+    "\0\s[0]%(normtext)So sore...\_w[2400] feels like I can't even lift a finger..."
+    "\0\s[0]%(normtext)I think I'm feeling a bit...\_w[2400] nauseous...?\_w[2400]  I don't remember anything I ate looking bad though..."
+    "\0\s[0]%(normtext)It's been getting harder to breathe properly lately...\_w[2400] My chest hurts so much..."
+    "\0\s[0]%(normtext)This has to be a cold...\_w[2400] What else could it be...?"
+
+    //variable pool
+
+    //misc pool
+    if daycount < 3;    "\1\s[10]%(fliptext)˙˙˙ǝɯɐs ǝɥʇ ˙˙˙pǝʇɔǝuuoɔ ˙˙˙ǝɹɐ ǝM\n\n[half]\_w[2400]\0\s[0]%(normtext)Wha...? \_w[1200]How are we the same?? \_w[1200]What do you even mean by that?\n\n[half]\_w[2400]\1\s[10]%(fliptext)˙˙˙ǝpᴉsuᴉ˙˙˙ \_w[2400]˙˙˙ǝpᴉsuᴉ˙˙˙\_w[2400]\0\s[0]%(normtext)..."
+    if daycount < 4;    "\0\s[0]%(normtext)...wasn't there something else I needed to do today...? \_w[2400]I... can't remember. \_w[2400]Feels like I haven't been able to remember most things these days."
+
+
+    //day 0: introductions - setting, characters, current situation
+    if daycount == 0    {
+        "\1\s[10]%(fliptext)˙˙˙ʞuᴉs ˙˙˙ɹǝpun ˙˙˙ǝʌᴉl I\_w[2400]\n\n[half]\0\s[0]%(normtext)You got under my sink too?\_w[2400]\n\n[half]\1\s[12]%(fliptext)˙˙˙ǝɯ oʇ ˙˙˙ǝɔᴉu ˙˙˙dɯɐp puɐ ʞɹɐp\_w[2400]\0\s[0]%(normtext)The pipes must be leaking again. \_w[1200]I don't think I'll have the money to fix it until next month... \_w[2400]if I even have enough money left over after rent."
+        "\1\s[10]%(fliptext)˙˙˙ǝƃpᴉɹɟ uᴉ ˙˙˙ǝʌᴉl I\_w[2400]\n\n[half]\0\s[0]%(normtext)You got in my fridge? \_w[1200]I knew something smelled off in there earlier...\n\n[half]\_w[2400]\1\s[14]%(fliptext)¡˙˙˙noʎ ǝʞᴉ˥ ˙˙˙ooʇ ˙˙˙pooɟ ˙˙˙ʇɐǝ I\n\n[half]\_w[2400]\0\s[0]%(normtext)Well if you're eating my food you could at least pay me back for it!\n\n[half]\_w[1200]\1\s[10]%(fliptext)¿˙˙˙\n\n[half]\_w[2400]\0\s[0]%(normtext)Nevermind, that was a joke...\_w[2400]\1\s[10]%(fliptext)¿˙˙˙"
+        "\0\s[0]%(normtext)I feel like I should clean out my fridge soon..."
+        "\1\s[10]%(fliptext)˙˙˙llɐʍ uᴉ ˙˙˙ǝʌᴉl I\_w[2400]\n\n[half]\0\s[0]%(normtext)Well of course you're in my walls... \_w[2400]Isn't that where you came from?\1\s[10]%(fliptext)\_w[2400]˙˙˙"
+        "\1\s[10]%(fliptext)˙˙˙ʇɟos ˙˙˙ʎzznɟ ˙˙˙ɹoolɟ uo ˙˙˙ǝʌᴉl I\_w[2400]\0\s[0]%(normtext)Must be the rug, then. \_w[1200]Can't even remember the last time I got it washed."
+        "\1\s[10]%(fliptext)˙˙˙ǝɯɐs ǝɥʇ ˙˙˙pǝʇɔǝuuoɔ ˙˙˙ǝɹɐ ǝM\n\n[half]\_w[2400]\0\s[0]%(normtext)Wha...? \_w[1200]How are we the same?? \_w[1200]What do you even mean by that?\n\n[half]\_w[2400]\1\s[10]%(fliptext)˙˙˙ǝpᴉsuᴉ˙˙˙ \_w[2400]˙˙˙ǝpᴉsuᴉ˙˙˙\_w[2400]\0\s[0]%(normtext)..."
+        "\0\s[0]%(normtext)*cough*\_w[600]\n\n[half]\1\s[10]%(fliptext)¿\n\n[half]\0\s[0]%(normtext)Ow... \_w[2400]My throat's sore from this awful cough. \_w[1200]I wish I could see a doctor but I haven't been able to book an appointment in ages. \_w[1200]Somehow the thought of it just fills me with dread.\_w[2400]\1\s[10]%(fliptext)˙˙˙ʎɹɐɔS ˙˙˙"
+        "\0\s[0]%(normtext)I feel like calling off work tomorrow... \_w[2400]hopefully my boss approves this time. \_w[2400]He always does but... \_w[2400]feels like I'm constantly just one sick day away from losing my job."
+        "\0\s[0]%(normtext)My body feels so sore... \_w[2400]Having to move all those boxes all day is exhausting."
+    }
+
+    //day 1: doubt - doubting situation, other people
+    if daycount == 1    {
+        "\0\s[0]%(normtext)I guess work was way more taxing than I realized...\_w[2400]\n\n[half]Then again, I can't remember the last time my job left me so...\_w[1800] fatigued?"
+        "\0\s[0]%(normtext)Maybe I do need time off work...\_w[2400] To be honest, I was considering quitting sometime soon..."
+        "\0\s[0]%(normtext)I shoud probably try to use my water bottle more... \_w[2400]I heard somewhere that it helps to keep hydrated when you're sick...\_w[2400]\n\n[half]Gross...\_w[1800] The mouthpiece is completely ruined.\1\s[12]%(fliptext)˙˙˙ʎzoɔ puɐ˙˙˙dɯɐp\_w[2400]\0\s[0]%(normtext)\n\n[half]Nevermind..."
+        "\0\s[0]%(normtext)Don't I have some dishes I needed to wash...?"
+        "\0\s[0]%(normtext)I think I'll take out my leftovers for dinner today...\_w[2400] Wouldn't it be on it's third day though...?\_w[2400]  Probably shouldn't risk it then..."
+        "\0\s[0]%(normtext)I wonder if I can get another extension on my rent..."
+        //"\0\s[0]%(normtext)"
+
+        //(chain dialogues)
+        "\0\s[0]%(normtext)I hope my coworkers aren't too worried about me...\_w[2400] They would usually make sure I wasn't hurting myself on the job.\e:chain=day1chain1_unflip"
+    }
+
+    //day 2: resistance
+    if daycount == 2    {
+        "\0\s[0]%(normtext)I wish I could get some housework done today...\_w[2400] I don't think I have the energy to even pick up the loose trash in my room."
+        "\0\s[0]%(normtext)This place is a mess...\_w[2400] I want to do something about it but...\_w[2400] I don't have the strength..."
+        "\0\s[0]%(normtext)Maybe I could hire someone to clean this place for me...\_w[2400] Would I be able to pay them though?\_w[2400] I doubt there'd be someone around here willing to clean for free..."
+        "\0\s[0]%(normtext)I could try asking someone else for help but...\_w[2400]who?\n\n[half]...No, not them...\_w[2400] they wouldn't let me live it down if they saw me like this..."
+        "\0\s[0]%(normtext)So much needs to be done...\_w[2400] I don't know if I'm up for it just yet...\_w[2400] I wish I could get some help but...\_w[2400] for some reason...\_w[2400] it feels like the type of thing I need to do on my own."
+        "\0\s[0]%(normtext)Where do I start... \_w[2400]It's all so overwhelming...\_w[2400] I need a moment to think..."
+        "\0\s[0]%(normtext)If I start cleaning then I'll have to do it all in one go...\_w[2400] I wouldn't be able to allow myself to rest..."
+
+        //(chain dialogues)
+        "\0\s[0]%(normtext)My landlord gave me a portable air purifier the other day...\_w[2400] I'll probably try to set it up soon.\e:chain=day2chain1_unflip"
+        "\0\s[0]%(normtext)Maybe I should get some cleaning done while I have the day off...\e:chain=day2chain2_unflip"
+        "\0\s[0]%(normtext)My neighbors dropped off some cleaning supplies the other day...\e:chain=day2chain3_unflip"
+        "\0\s[0]%(normtext)Something in this place has to be busted...\_w[2400] Guess I'll need to get it fixed.\e:chain=day2chain4_unflip"
+    }
+
+    //day 3: despair
+    if daycount == 3    {
+        "\1\s[10]%(fliptext)˙˙˙pǝsolɔ ˙˙˙sǝʎƎ\_w[2400]\n\n[half]˙˙˙ɹO ¿˙˙˙ƃuᴉdǝǝlS"
+        "\1\s[10]%(fliptext)˙˙˙llᴉʇs ˙˙˙noʎ ˙˙˙ǝɹ∀\0\s[0]%(normtext)Yep, still awake...\_w[2400] My sleep hasn't been the best lately..."
+        "\1\s[13]%(fliptext)˙˙˙ǝɹǝɥʍʎɹǝʌǝ ˙˙˙spuǝᴉɹℲ\_w[2400]\n\n[half]\s[14]˙˙˙ʎuɐɯ oS"
+        "\1\s[12]%(fliptext)˙˙˙noʎ ʞuɐɥʇ˙˙˙\0\s[0]%(normtext)...\n...for what?\_w[2400]\1\s[14]%(fliptext)¡˙˙˙spuǝᴉɹɟ puɐ˙˙˙ǝɯoɥ˙˙˙ǝɟᴉ˥ ˙˙˙ƃuᴉɥʇʎɹǝʌƎ"
+        "\1\s[10]%(fliptext)˙˙˙ʍouʞ noʎ pᴉp\s[12]\n ˙˙˙\n ˙˙˙\s[14]¡˙˙˙noʎ uᴉ ˙˙˙ǝʌᴉl ˙˙˙I\n\n[half]\0\s[0]%(normtext).\w9\w9.\w9\w9.\w9\w9\_w[1200]zzzz...\1\s[10]%(fliptext)\n\n[half]¿˙˙˙ǝʞɐʍɐ ˙˙˙ʇoN\n\n[half]\_w[2400]\s[12] ˙˙˙ʎɐʞo ˙˙˙s,ʇI"
+        "\0\s[0]%(normtext)No matter now much sleep I get...\_w[2400] it feels like I'm always tired..."
+        "\0\s[0]%(normtext)I don't think I have the energy for anything today..."
+        //"\0\s[0]%(normtext)"
+    }
+
+    //day 4: acceptance
+    if daycount == 4    {
+        "\0\s[0]%(normtext)I'm never coming out of this room...\_w[2400]"
+        "\0\s[0]%(normtext)I feel like I'm rotting from the inside...\1\s[10]%(fliptext)˙˙˙pooƃ sᴉ ʇoɹ ˙˙˙pooƃ\_w[2400]\n\n[half]\s[12]˙˙˙ʇoɹ sn ʇǝ˥"
+        "\0\s[0]%(normtext)I think I'll stay in bed for a few more minutes...\_w[2400]\1\s[13]˙˙˙ǝɯ ɥʇᴉʍ ˙˙˙ʎɐʇS"
+        "\0\s[0]%(normtext)...wasn't there some...thing...\_w[1800] I-\_w[600] can't think...\_w[2400] head hurts again..."
+        "\0\s[0]%(normtext)There's nothing left to eat,\_w[1800] and yet...\_w[2400] I don't feel hungry."
+        "\1\s[10]%(fliptext)˙˙˙noʎ ploɯ I\_w[2400]\n\n[half]\0\s[0]%(normtext)...what do you mean?\1\s[10]%(fliptext)˙˙˙I\n\n[half]\s[12]\_w[2400]\s[14]¡˙˙˙noʎ ploɯ˙˙˙\0\s[0]%(normtext)..."
+        "\0\s[0]%(normtext)Maybe...\_w[2400] as long as I don't think about my responsibilities...\_w[2400] I don't have to worry anymore..."
+        "\1\s[10]%(fliptext)˙˙˙ǝpᴉsuᴉ ˙˙˙ɯɐ ˙˙˙I\n\n[half]\_w[2400]\s[12]¿˙˙˙lǝǝɟ ˙˙˙noʎ ˙˙˙uɐƆ\0\s[0]%(normtext)...\n\n[half]\_w[2400]...I can't feel anything...\_w[2400]I've lost all feeling in my body...\_w[2400]\1\s[10]%(fliptext)˙˙˙ɥo˙˙˙"
+        "\0\s[0]%(normtext)Don't wanna get up...\_w[2400] This room is so cold...\_w[2400] yet this bed is so warm..."
+        "\0\s[0]%(normtext)I give up...\_w[2400] I don't think I can bring myself to clean this place...\1\s[10]¿˙˙˙ǝɯ ʇnoqɐ ˙˙˙ǝɹɐɔ ˙˙˙no⅄\0\s[0].\w9\w9.\w9\w9.\w9\w9\e:chain=day4chain1"
+    }
+}
+
+RandomTalk_unflip : nonoverlap_pool
+{
+    //base pool
+    "\0\s[0]%(normtext)My head is pounding...\_w[2400] Everything feels so hazy..."
+    "\0\s[0]%(normtext)So sore...\_w[2400] feels like I can't even lift a finger..."
+    "\0\s[0]%(normtext)I think I'm feeling a bit...\_w[2400] nauseous...?\_w[2400]  I don't remember anything I ate looking bad though..."
+    "\0\s[0]%(normtext)It's been getting harder to breathe properly lately...\_w[2400] My chest hurts so much..."
+    "\0\s[0]%(normtext)This has to be a cold...\_w[2400] What else could it be...?"
+
+    //variable pool
+
+    //misc pool
+    if daycount < 3;    "\1\s[10]%(fliptext)We are...\_w[2400] connected...\_w[2400] the same...\n\n[half]\_w[2400]\0\s[0]%(normtext)Wha...?\_w[2400]  How are we the same?? What do you even mean by that?\n\n[half]\_w[2400]\1\s[10]%(fliptext)...inside...\_w[2400] ...inside...\0\s[0]%(normtext)..."
+    if daycount < 4;    "\0\s[0]%(normtext)...wasn't there something else I needed to do today...? \_w[2400]I... can't remember. \_w[2400]Feels like I haven't been able to remember most things these days."
+
+
+    //day 0: introductions - setting, characters, current situation
+    if daycount == 0    {
+        "\1\s[10]%(fliptext)I live...\_w[2400] under...\_w[2400] sink...\_w[2400]\n\n[half]\0\s[0]%(normtext)You got under my sink too?\_w[2400]\n\n[half]\1\s[10]%(fliptext)dark and damp...\_w[2400] nice...\_w[2400] to me...\_w[2400]\0\s[0]%(normtext)The pipes must be leaking again. \_w[1200]I don't think I'll have the money to fix it until next month... \_w[2400]if I even have enough money left over after rent."
+        "\1\s[10]%(fliptext)I live...\_w[2400] in fridge...\_w[2400]\n\n[half]\0\s[0]%(normtext)You got in my fridge? \_w[1200]I knew something smelled off in there earlier...\n\n[half]\_w[2400]\1\s[14]%(fliptext)I eat... food... too... Like you...!\n\n[half]\_w[2400]\0\s[0]%(normtext)Well if you're eating my food you could at least pay me back for it!\n\n[half]\_w[2400]\1\s[10]%(fliptext)...?\_w[1200] \n\n[half]\0\s[0]%(normtext)Nevermind, \_w[1200]that was a joke...\_w[2400]\1\s[10]%(fliptext)...?\_w[1200] "
+        "\0\s[0]%(normtext)I feel like I should clean out my fridge soon..."
+        "\1\s[10]%(fliptext)I live...\_w[2400] in wall...\_w[2400]\n\n[half]\0\s[0]%(normtext)Well of course you're in my walls...\_w[2400] Isn't that where you came from?\1\s[10]%(fliptext)\_w[2400]..."
+        "\1\s[10]%(fliptext)I live...\_w[2400] on floor...\_w[2400] fuzzy...\_w[2400] soft...\_w[2400]\0\s[0]%(normtext)Must be the rug, then. Can't even remember the last time I got it washed."
+        "\0\s[0]%(normtext)*cough*\_w[600]\n\n[half]\1\s[10]%(fliptext)?\n\n[half]\0\s[0]%(normtext)Ow... \_w[2400]My throat's sore from this awful cough. \_w[1200]I wish I could see a doctor but I haven't been able to book an appointment in ages. \_w[1200]Somehow the thought of it just fills me with dread.\1\s[10]%(fliptext)...\_w[2400] Scary..."
+        "\0\s[0]%(normtext)I feel like calling off work tomorrow...\_w[2400] hopefully my boss approves this time. \_w[2400]He always does but...\_w[2400] feels like I'm constantly just one sick day away from losing my job."
+        "\0\s[0]%(normtext)My body feels so sore...\_w[2400] Having to move all those boxes all day is exhausting."
+    }
+
+    //day 1: doubt - doubting situation, other people
+    if daycount == 1    {
+        "\0\s[0]%(normtext)I guess work was way more taxing than I realized...\_w[2400]\n\n[half]Then again, I can't remember the last time my job left me so...\_w[1800] fatigued?"
+        "\0\s[0]%(normtext)Maybe I do need time off work...\_w[2400] To be honest, I was considering quitting sometime soon..."
+        "\0\s[0]%(normtext)I shoud probably try to use my water bottle more... \_w[2400]I heard somewhere that it helps to keep hydrated when you're sick...\_w[2400]\n\n[half]Gross...\_w[1800] The mouthpiece is completely ruined.\1\s[10]%(fliptext)Damp...\_w[2400]and cozy...\0\s[0]%(normtext)\n\n[half]Nevermind..."
+        "\0\s[0]%(normtext)Don't I have some dishes I needed to wash...?"
+        "\0\s[0]%(normtext)I think I'll take out my leftovers for dinner today...\_w[2400] Wouldn't it be on it's third day though...?\_w[2400]  Probably shouldn't risk it then..."
+        "\0\s[0]%(normtext)I wonder if I can get another extension on my rent..."
+        //"\0\s[0]%(normtext)"
+
+        //(chain dialogues)
+        "\0\s[0]%(normtext)I hope my coworkers aren't too worried about me...\_w[2400] They would usually make sure I wasn't hurting myself on the job.\e:chain=day1chain1_unflip"
+    }
+
+    //day 2: resistance
+    if daycount == 2    {
+        "\0\s[0]%(normtext)I wish I could get some housework done today...\_w[2400] I don't think I have the energy to even pick up the loose trash in my room."
+        "\0\s[0]%(normtext)This place is a mess...\_w[2400] I want to do something about it but...\_w[2400] I don't have the strength..."
+        "\0\s[0]%(normtext)Maybe I could hire someone to clean this place for me...\_w[2400] Would I be able to pay them though?\_w[2400] I doubt there'd be someone around here willing to clean for free..."
+        "\0\s[0]%(normtext)I could try asking someone else for help but...\_w[2400]who?\n\n[half]...No, not them...\_w[2400] they wouldn't let me live it down if they saw me like this..."
+        "\0\s[0]%(normtext)So much needs to be done...\_w[2400] I don't know if I'm up for it just yet...\_w[2400] I wish I could get some help but...\_w[2400] for some reason...\_w[2400] it feels like the type of thing I need to do on my own."
+        "\0\s[0]%(normtext)Where do I start... \_w[2400]It's all so overwhelming...\_w[2400] I need a moment to think..."
+        "\0\s[0]%(normtext)If I start cleaning then I'll have to do it all in one go...\_w[2400] I wouldn't be able to allow myself to rest..."
+
+        //(chain dialogues)
+        "\0\s[0]%(normtext)My landlord gave me a portable air purifier the other day...\_w[2400] I'll probably try to set it up soon.\e:chain=day2chain1_unflip"
+        "\0\s[0]%(normtext)Maybe I should get some cleaning done while I have the day off...\e:chain=day2chain2_unflip"
+        "\0\s[0]%(normtext)My neighbors dropped off some cleaning supplies the other day...\e:chain=day2chain3_unflip"
+        "\0\s[0]%(normtext)Something in this place has to be busted...\_w[2400] Guess I'll need to get it fixed.\e:chain=day2chain4_unflip"
+    }
+
+    //day 3: despair
+    if daycount == 3    {
+        "\1\s[10]%(fliptext)Eyes...\_w[2400] closed...\n\n[half]Sleeping...?\_w[2400] Or..."
+        "\1\s[10]%(fliptext)Are...\_w[2400] you...\_w[2400] still...\_w[2400]\0\s[0]%(normtext)Yep, still awake...\_w[2400] My sleep hasn't been the best lately..."
+        "\1\s[13]%(fliptext)Friends...\_w[2400] everywhere...\_w[2400]\s[14]\nSo many..."
+        "\1\s[12]%(fliptext)...thank you.\0\s[0]%(normtext)...\n...for what?\_w[2400]\1\s[14]%(fliptext)Everything...\_w[2400] Life...\_w[2400]home...\_w[2400]and friends..."
+        "\1\s[10]%(fliptext)Did you know...\_w[2400]\s[12]\n...\_w[2400]\n...\_w[2400] \s[10]I...\_w[2400] live...\_w[2400]\s[14] in you...!\_w[2400]\0\s[0]%(normtext).\w9\w9.\w9\w9.\w9\w9\_w[1200]zzzz...\1\s[10]%(fliptext)\n\n[half]\_w[2400]Not...\_w[2400] awake...?\_w[2400]\s[12] It's...\_w[2400] okay..."
+        "\0\s[0]%(normtext)No matter now much sleep I get...\_w[2400] it feels like I'm always tired..."
+        "\0\s[0]%(normtext)I don't think I have the energy for anything today..."
+        //"\0\s[0]%(normtext)"
+    }
+
+    //day 4: acceptance
+    if daycount == 4    {
+        "\0\s[0]%(normtext)I'm never coming out of this room...\_w[2400]"
+        "\0\s[0]%(normtext)I feel like I'm rotting from the inside...\1\s[10]Good...\_w[2400] rot is good...\_w[2400]\s[12] Let us rot..."
+        "\0\s[0]%(normtext)I think I'll stay in bed for a few more minutes...\1\s[13]Stay...\_w[2400] with me..."
+        "\0\s[0]%(normtext)...wasn't there some...thing...\_w[1800] I-\_w[600] can't think...\_w[2400] head hurts again..."
+        "\0\s[0]%(normtext)There's nothing left to eat,\_w[1800] and yet...\_w[2400] I don't feel hungry."
+        "\1\s[10]%(fliptext)I mold you...\_w[2400]\0\s[0]%(normtext)...what do you mean?\1\s[10]%(fliptext)I...\s[12]\_w[2400]\s[14] mold you...!\0\s[0]%(normtext)..."
+        "\0\s[0]%(normtext)Maybe...\_w[2400] as long as I don't think about my responsibilities...\_w[2400] I don't have to worry anymore..."
+        "\1\s[10]%(fliptext)I...\_w[2400] am...\_w[2400] inside...\n\n[half]\s[12]Can...\_w[2400] you...\_w[2400] feel...?\_w[2400] \0\s[0]%(normtext)...\n\n[half]\_w[2400]...I can't feel anything...\_w[2400]I've lost all feeling in my body...\_w[2400]\1\s[10]%(fliptext)...oh..."
+        "\0\s[0]%(normtext)Don't wanna get up...\_w[2400] This room is so cold...\_w[2400] yet this bed is so warm..."
+        "\0\s[0]%(normtext)I give up...\_w[2400] I don't think I can bring myself to clean this place...\1\s[10]You...\_w[2400] care...\_w[2400] about me...?\_w[2400] \0\s[0].\w9\w9.\w9\w9.\w9\w9\e:chain=day4chain1_unflip"
+    }
+}
+
+DayEndTalk
+{
+    "\0\s[0]%(normtext)I feel like I should try to get some sleep..."
+    "\0\s[0]%(normtext)So tired..."
+}
+
+OnTalkStop
+{
+    aitalkinterval = 0
+    dayend = "true"
+}
+
+
+//chains
+
+//day 1
+day1chain1_unflip
+{{CHAIN
+    "\0\s[0]%(normtext)...I feel like they're probably more upset that I ditched all of my shelf stocking duties for today.\_w[1800] They never made it obvious but I can't help but think...\_w[2400] The thought keeps lingering,\_w[1200] no matter how many times I try to tell myself it's not true..."
+    "\0\s[0]%(normtext)Still...\_w[1800] having a little break should be fine,\_w[2100] right...?\e:chain=end"
+}}CHAIN
+//day 2
+day2chain1_unflip
+{{CHAIN
+    "\0\s[0]%(normtext)Ow...\_w[1800] feeling lightheaded all of a sudden.\_w[2400] I should lay back down..."
+    "\0\s[0]%(normtext)Can't even remember why I was trying to get up just now..."
+    "\0\s[0]%(normtext)...oh, right. The air purifier...\_w[2400] I might as well hold it off until tomorrow.\e:chain=end"
+}}CHAIN
+day2chain2_unflip
+{{CHAIN
+    "\0\s[0]%(normtext)*cough* On second thought...\_w[2400] I'll just focus on regaining my strength..."
+    "\0\s[0]%(normtext)...\n\n[half]I feel like there was something I needed to do just now...\_w[2400] but I can't remember..."
+    "\0\s[0]%(normtext)I think it was-\_w[600] Ah! Another headache...\_w[2400] That's probably what I get for thinking too hard...\e:chain=end"
+}}CHAIN
+day2chain3_unflip
+{{CHAIN
+    "\0\s[0]%(normtext)I'm sure they meant well by it but...\_w[2400] I can't help but feel...\_w[1800]self-conscious...? \_w[2400]I guess that's the word for it...\e:chain=end"
+}}CHAIN
+day2chain4_unflip
+{{CHAIN
+    "\0\s[0]%(normtext)My parents would probably know what to do, although..."
+    "\0\s[0]%(normtext)I feel like I've burned the last of my goodwill with them...\_w[2400] If I tried to come back now, they..."
+    "\0\s[0]%(normtext)...they'd just put me down for being lazy...\_w[2400]tell me to do it myself...\_w[2400]why bother?\e:chain=end"
+}}CHAIN
+//day 4
+day4chain1
+{{CHAIN
+    "\1\s[10]%(fliptext)¿puǝᴉɹɟ ˙˙˙ɹnoʎ ˙˙˙I ˙˙˙ɯ∀\0\s[0]%(normtext).\w9\w9.\w9\w9.\w9\w9\e:chain=end"
+}}CHAIN
+day4chain1_unflip
+{{CHAIN
+    "\1\s[10]%(fliptext)Am...\_w[2400] I...\_w[2400] your...\_w[2400] friend?\0\s[0]%(normtext).\w9\w9.\w9\w9.\w9\w9\e:chain=end"
+}}CHAIN

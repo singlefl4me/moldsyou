@@ -1,0 +1,43 @@
+fliptext
+{
+    "\![set,balloonwait,200%]\f[bold,1]\f[align,bottom]\f[align,right]"
+}
+
+normtext
+{
+    "\![set,balloonwait,125%]\f[italic,1]\f[align,top]\f[align,left]"
+}
+
+bootdialogue : all
+{
+	"\1\s[15]\0\s[0]%(normtext)\b[0]Another long day... \_w[1200]\n\n[half]Work has been hectic today, \_w[800]I was hardly able to keep up with it all. \_w[800]Didn't help that I haven't been able to move around for too long without losing my breath.\_w[1200]\n\n[half]My chest gets too tight whenever that happens, \_w[800]almost feels like something lodged in my lungs...\_w[1200]\nI've tried coughing \f[bold,1]something\f[bold,0] out but I haven't had any luck.\_w[1200]\nAt least now I have some time to myself. \_w[1200]Now I can finally rest...\_w[2400]\n\n[half]"
+	"\_w[3600]I really need to fix this place up sometime... \_w[1200]it's okay but something about it seems... off.\_w[1200]\n\n[half]"
+	"\_w[4800]Has that spot on the wall gotten bigger?\f[italic,0]\_w[2400]\n\n[half]"
+	"\1\s[11]%(fliptext)˙\w9\w9˙\w9\w9˙\w9\w9\f[bold,0]\_w[2400]\n\n[half]"
+	"\0\s[0]%(normtext)What is that?! \_w[800]Did that thing just move??\f[italic,0]\_w[2400]\n\n[half]"
+	"\1\s[10]%(fliptext)˙\w9\w9˙\w9\w9˙\w9\w9\f[bold,0]\_w[2400]\n\n[half]"
+	"\0\s[0]%(normtext)!\_w[1200]\n\n[half]"
+	"\1\s[10]%(fliptext)˙˙˙ollǝɥ ˙˙˙ɥ\f[bold,0]"
+}
+
+bootdialogue_unflip : all
+{
+	"\1\s[15]\0\s[0]%(normtext)\b[0]Another long day... \_w[1200]\n\n[half]Work has been hectic today, \_w[800]I was hardly able to keep up with it all. \_w[800]Didn't help that I haven't been able to move around for too long without losing my breath.\_w[1200]\n\n[half]My chest gets too tight whenever that happens, \_w[800]almost feels like something lodged in my lungs...\_w[1200]\nI've tried coughing \f[bold,1]something\f[bold,0] out but I haven't had any luck.\_w[1200]\nAt least now I have some time to myself. \_w[1200]Now I can finally rest...\_w[2400]\n\n[half]"
+	"\_w[3600]I really need to fix this place up sometime... \_w[1200]it's okay but something about it seems... off.\_w[1200]\n\n[half]"
+	"\_w[4800]Has that spot on the wall gotten bigger?\f[italic,0]\_w[2400]"
+	"\1\s[11]%(fliptext).\w9\w9.\w9\w9.\w9\w9\f[bold,0]\_w[1200]\n\n[half]"
+	"\0\s[0]%(normtext)What is that?! \_w[800]Did that thing just move??\f[italic,0]\_w[1200]\n\n[half]"
+	"\1\s[10]%(fliptext).\w9\w9.\w9\w9.\w9\w9\f[bold,0]\_w[1200]\n\n[half]"
+	"\0\s[0]%(normtext)!\_w[1200]\n\n[half]"
+	"\1\s[10]%(fliptext)h... hello\f[bold,0]"
+}
+
+bootdialoguedayone
+{
+	"\1\s[12]\0\s[0]%(normtext)\_w[2100].\w9\w9.\w9\w9.\w9\w9I'm still here... \_w[1800]I...\w9\w9 don't feel any worse at least...\_w[1200]\nWhat time is it...?\n\_w[2400]! \w9\w9\1\s[10]\0\s[0]%(normtext)\_w[1200]I'm late! \_w[1200]I've got to get to work...!\n\n[half]\_w[2400]\1\s[10]%(fliptext)¡˙˙˙oN\n\n[half]\_w[2400]\s[12]˙˙˙oƃ ʇ,uop\n\n[half]\_w[2400]\0\s[0]%(normtext)But I have to be there. \_w[2400]If I don't show then I'll lose my job, \_w[1200]which means I cant pay for utilities, \_w[1200]which means- \_w[1200]Ah! \w9\w9\1\s[10]\0\s[0]%(normtext)\_w[1200]My head... \_w[3000]I can't even lift myself out of bed... \n\n[half]\_w[2400].\w9\w9.\w9\w9.\w9\w9I guess I have no choice but to call in sick for the week... \_w[2400]Maybe I just need more time to rest...\_w[2400]\1\s[13]%(fliptext)˙˙˙pooƃ ˙˙˙ʇsǝɹ"
+}
+
+bootdialoguedayone_unflip
+{
+	"\1\s[12]\0\s[0]%(normtext)\_w[2100].\w9\w9.\w9\w9.\w9\w9I'm still here... \_w[1800]I...\w9\w9 don't feel any worse at least...\_w[1200]\nWhat time is it...?\n\_w[2400]! \w9\w9\1\s[10]\0\s[0]%(normtext)\_w[1200]I'm late! \_w[1200]I've got to get to work...!\n\n[half]\_w[2400]\1\s[10]%(fliptext)No...! \_w[2400]\s[12]Don't go...\n\n[half]\_w[2400]\0\s[0]%(normtext)But I have to be there. \_w[2400]If I don't show then I'll lose my job, \_w[1200]which means I cant pay for utilities, \_w[1200]which means- \_w[1200]Ah! \w9\w9\1\s[10]\0\s[0]%(normtext)\_w[1200]My head... \_w[3000]I can't even lift myself out of bed... \n\n[half]\_w[2400].\w9\w9.\w9\w9.\w9\w9I guess I have no choice but to call in sick for the week... \_w[2400]Maybe I just need more time to rest...\_w[2400]\1\s[13]%(fliptext)Rest... \_w[2400]good..."
+}

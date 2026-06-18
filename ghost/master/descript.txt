@@ -1,0 +1,15 @@
+charset,UTF-8
+
+name,molds you
+type,ghost
+
+shiori,yaya.dll
+
+craftman,idk
+craftmanw,idkimtired
+craftmanurl,https://github.com/singlefl4me
+
+sakura.name,Sage
+kero.name,S. chartarum
+
+sstp.allowunspecifiedsend,0

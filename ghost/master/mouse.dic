@@ -1,0 +1,52 @@
+
+OnMouseDoubleClick
+{
+	if reference5 == 0
+	{
+		if reference3 == 0
+		{
+			OnSakuraMenu
+		}
+		else
+		{
+			OnKeroMenu
+		}
+	}
+}
+
+OnMouseMove
+{
+	/*
+	if reference4 != ""
+	{
+		stroke++
+		
+		if stroke % 40 == 0
+		{
+			if reference3 == 0; OnMouseMove.Sakura
+			else; OnMouseMove.Kero
+		}
+	}
+	*/
+}
+
+OnMouseMove.Sakura
+{
+	if reference4 == "head"
+	{
+		""
+	}
+}
+
+OnMouseMove.Kero
+{
+	if reference4 == "head"
+	{
+		""
+	}
+}
+
+OnMouseLeaveAll
+{
+	stroke = 0
+}

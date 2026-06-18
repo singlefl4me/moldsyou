@@ -1,0 +1,75 @@
+OnFirstBoot : all
+{
+	LastTalk = ""
+    fliptext_var = ""
+    daycount = 0
+    dayend_time = 0
+    daystart_time = 0
+    dialoguecount = 0
+    
+    OnDialogueCountSet
+
+    "\1\s[-1]\0\s[0]\w9\w9\w9Text in the main balloon will appear upside down, it may be difficult for certain people to read or to parse properly using a machine translator. Do you wish to proceed with the text as-is?\n\n[half]"
+    "\![*]\q[Yes,OnTextSet,usd]         \![*]\q[No,OnTextSet,rsu]\n\n[half]\*"
+    "(Selecting 'No' will change the text of the main character balloon to display normally.)"
+}
+
+OnTextSet : all
+{
+    if reference0 == "usd"  {
+        "\![raise,OnFlipText,true]%(bootdialogue)"
+    }
+    elseif reference0 == "rsu"  {
+        "\![raise,OnFlipText,false]%(bootdialogue_unflip)"
+    }
+}
+
+OnInitialize
+{	
+	if reference0 != "reload"   {
+        if !ISVAR("daycount"); daycount = 1
+        if !ISVAR("dialoguecount_max"); OnDialogueCountSet
+        if !ISVAR("dayend"); dayend = "false"
+        dialoguecount = 0
+		LastTalk = ""
+	}
+}
+
+
+OnBoot
+{
+    if dayend == "true"; daycount++
+    dayend = "false"
+    OnDialogueCountSet
+    if daycount != 0; OnEffectSetup
+
+    //"\![raise,OnCalcTime,get]\1\s[11]\0\s[0]%(normtext).\w9\w9.\w9\w9.\w9\w9\n.\w9\w9.\w9\w9.\w9\w9\n...\_w[2400]\1\s[10]\0\s[0]"
+    --
+    if daycount == 1    {
+        if fliptext_var == "true";  "%(bootdialoguedayone)"
+        else;   "%(bootdialoguedayone_unflip)"
+    }
+    else    {
+        "\1\s[10]\0\s[0]%(normtext)\_w[3000]...my head... I think my headache must've gotten worse somehow..."
+        "\1\s[10]\0\s[0]%(normtext)\_w[3000]*cough* Sorry... was I choking just now? For some reason it felt like I couldn't breathe..."
+        //""
+        //""
+    }
+    //"%(normtext).\w9\w9.\w9\w9.\w9\w9\n.\w9\w9.\w9\w9.\w9\w9\n...\_w[2400]how long did I sleep for...?\_w[2400]\n\n[half]...%(daystart_time) hours?? I missed my alarm...\nI guess I can't go to work today."
+}
+
+OnClose
+{
+    aitalkinterval = aitalkinterval_old
+
+    //"\![raise,OnCalcTime,set]"
+    --
+    if dayend == "true"  {
+        "\0\s[0]%(normtext)It's getting late... \_w[2400]I'll see how I feel in the morning..."
+        "\0\s[0]%(normtext)I'm so exhausted... \_w[2400]Did I even get anything done today?\_w[2400]\n\n[half]I guess I'll try to do better tomorrow..."
+        "\0\s[0]%(normtext)I think I'll try to rest my eyes for a bit... \_w[2400]The lights in this room have been way too bright."
+        "\0\s[0]%(normtext)Maybe taking a small nap would help... \_w[2400]At least it wouldn't hurt...\_w[2400]\n\n[half]right...?"
+    }
+    --
+    "\w9\w9\-"
+}

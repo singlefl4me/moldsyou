@@ -1,0 +1,78 @@
+
+descript
+{
+	version,1
+}
+
+surface0
+{
+	animation100.interval,bind
+	animation100.pattern0,overlayfast,100,0,0,429
+
+	animation101.interval,bind
+	animation101.pattern0,overlayfast,101,0,0,429
+
+	animation102.interval,bind
+	animation102.pattern0,overlayfast,102,0,0,429
+
+	animation103.interval,bind
+	animation103.pattern0,overlayfast,103,0,0,429
+}
+
+//—————————————————————————————— Kero surfaces ——————————————————————————————
+
+surface10
+{
+	animation0.interval,always
+	animation0.pattern0,overlaymultiply,1010,1000,0,0
+	animation0.pattern1,overlaymultiply,1011,1000,0,0
+	animation0.pattern2,overlaymultiply,1012,1000,0,0
+
+	animation1.interval,runonce
+	animation1.pattern1,overlay,1000,0,428,107
+}
+
+surface11
+{
+}
+surface12
+{
+	animation2.interval,runonce
+	animation2.pattern1,overlay,1001,0,428,107
+}
+surface13
+{
+	animation3.interval,runonce
+	animation3.pattern1,overlay,1002,0,428,107
+}
+surface14
+{
+	animation3.interval,runonce
+	animation3.pattern1,overlay,1002,0,428,107
+	
+	animation4.interval,runonce
+	animation4.pattern0,overlay,3000,0,245,0
+}
+surface15
+{
+	element0,base,base1.png,0,0
+}
+
+surface10-14
+{
+	element0,base,base1.png,0,0
+	element1,base,base2.png,0,0
+
+	animation5.interval,runonce
+	animation5.pattern0,overlay,2000,83,305,0
+	animation5.pattern1,overlay,2001,83,305,0
+	animation5.pattern2,overlay,2002,83,305,0
+	animation5.pattern3,overlay,2003,83,305,0
+	animation5.pattern4,overlay,2004,83,305,0
+	animation5.pattern5,overlay,2005,166,305,0
+	animation5.pattern6,overlay,2006,166,305,0
+	animation5.pattern7,overlay,2007,83,305,0
+	animation5.pattern8,overlay,2008,83,305,0
+	animation5.pattern9,overlay,2009,83,305,0
+	animation5.pattern10,overlay,-1,83,305,0
+}
