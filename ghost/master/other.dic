@@ -75,6 +75,13 @@ OnEffectSetup
 	"\0\s[0]\![bind,effect,effect%(daycount),1]"
 }
 
+OnNeedlePoke
+{
+	if reference0 == 1	{
+		"\1\s[20]\__w[animation,5]\__w[1000]\s[21]\__w[animation,5]\s[10]"
+	}
+}
+
 //—————————————————————————————— Right click menu links ——————————————————————————————
 
 //Takes an array of alternating names and urls, and formats them for use with the right click menu
