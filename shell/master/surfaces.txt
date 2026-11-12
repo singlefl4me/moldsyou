@@ -24,12 +24,12 @@ surface0
 surface10
 {
 	animation0.interval,always
-	animation0.pattern0,overlaymultiply,1010,1000,0,0
-	animation0.pattern1,overlaymultiply,1011,1000,0,0
-	animation0.pattern2,overlaymultiply,1012,1000,0,0
+	animation0.pattern0,blend-soft-light,1010,1000,0,0
+	animation0.pattern1,blend-soft-light,1011,1000,0,0
+	animation0.pattern2,blend-soft-light,1012,1000,0,0
 
 	animation1.interval,runonce
-	animation1.pattern1,overlay,1000,0,428,107
+	animation1.pattern0,overlay,1000,0,428,107
 }
 
 surface11
@@ -38,17 +38,17 @@ surface11
 surface12
 {
 	animation2.interval,runonce
-	animation2.pattern1,overlay,1001,0,428,107
+	animation2.pattern0,overlay,1001,0,428,107
 }
 surface13
 {
 	animation3.interval,runonce
-	animation3.pattern1,overlay,1002,0,428,107
+	animation3.pattern0,overlay,1002,0,428,107
 }
 surface14
 {
 	animation3.interval,runonce
-	animation3.pattern1,overlay,1002,0,428,107
+	animation3.pattern0,overlay,1002,0,428,107
 	
 	animation4.interval,runonce
 	animation4.pattern0,overlay,3000,0,245,0
@@ -75,4 +75,39 @@ surface10-14
 	animation5.pattern8,overlay,2008,83,305,0
 	animation5.pattern9,overlay,2009,83,305,0
 	animation5.pattern10,overlay,-1,83,305,0
+}
+
+surface20
+{
+	animation5.interval,runonce
+	animation5.pattern0,overlay,4000,0,0,0
+	animation5.pattern1,overlay,4001,83,0,0
+	animation5.pattern2,overlay,4002,83,0,0
+	animation5.pattern3,overlay,4003,83,0,0
+	animation5.pattern4,overlay,4004,83,0,0
+	animation5.pattern5,overlay,4003,83,0,0
+	animation5.pattern6,overlay,4004,83,0,0
+	animation5.pattern7,overlay,4003,83,0,0
+	animation5.pattern8,overlay,4004,83,0,0
+}
+
+surface21
+{
+	animation5.interval,runonce
+	animation5.pattern0,overlay,4100,0,0,0
+	animation5.pattern1,overlay,4101,83,0,0
+	animation5.pattern2,overlay,4102,83,0,0
+	animation5.pattern3,overlay,4103,83,0,0
+	animation5.pattern4,overlay,4104,83,0,0
+	animation5.pattern5,overlay,4105,83,0,0
+	animation5.pattern6,overlay,4106,83,0,0
+	animation5.pattern7,overlay,4004,83,0,0
+}
+
+surface20,21
+{
+	element0,base,base1.png,0,0
+
+	animation1.interval,runonce
+	animation1.pattern0,overlay,1000,0,428,107
 }
